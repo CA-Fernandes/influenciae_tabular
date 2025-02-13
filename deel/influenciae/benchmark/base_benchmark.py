@@ -371,7 +371,7 @@ class MislabelingDetectorEvaluator:
             A numpy array with the detection curve as we progressively scan the dataset.
         """
         index = np.in1d(sorted_influences_indexes, noisy_label_indexes)
-        index = tf.cast(index, np.int32)
+        index = tf.cast(index, dtypes=np.int32)
         curve = np.cumsum(index)
         if curve[-1] != 0:
             curve = curve / curve[-1]

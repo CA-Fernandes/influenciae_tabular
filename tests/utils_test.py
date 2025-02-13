@@ -26,7 +26,7 @@ def assert_tensor_equal(tensor1, tensor2):
 
 
 def generate_data(x_shape=(32, 32, 3), num_labels=10, samples=100):
-    x = np.random.rand(samples, *x_shape).astype(np.float32)
+    x = np.random.rand(samples, *x_shape).astype(float)
     y = to_categorical(np.random.randint(0, num_labels, samples), num_labels)
 
     return x, y

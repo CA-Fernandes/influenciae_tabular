@@ -28,7 +28,7 @@ def _normalize(image: Union[tf.Tensor, np.ndarray]) -> np.ndarray:
     image
         Image ready to be used with matplotlib (in range[0, 1]).
     """
-    image = np.array(image, np.float32)
+    image = np.array(image, dtype=float)
 
     image -= image.min()
     image /= image.max()
